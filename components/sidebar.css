@@ -1,0 +1,13 @@
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 4px; /* makes scrollbar thin */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5); /* scrollbar color */
+  border-radius: 9999px; /* fully rounded */
+}

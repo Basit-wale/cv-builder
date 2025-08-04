@@ -1,0 +1,23 @@
+@media (min-width: 1060px) {
+  .header-responsive-design {
+    display: flex;
+  }
+}
+
+@media (min-width: 930px) {
+  .searchBar-responsive-design {
+    display: flex;
+  }
+}
+
+@media (min-width: 570px) {
+  .nav-responsive-design {
+    display: flex;
+  }
+}
+
+@media (min-width: 570px) {
+  .menu-responsive-design {
+    display: none;
+  }
+}
