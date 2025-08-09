@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
@@ -19,9 +19,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "next lint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,md}": [
       "prettier --write"
     ]
   },
