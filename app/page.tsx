@@ -1,12 +1,8 @@
-import HomeLayout from "./(main)/Home/layout";
-import Home from "./(main)/Home/page";
-
-const App = () => {
+export default function LandingPage() {
   return (
-    <div>
-      <Home />
-    </div>
+    <main>
+      {/* <LandingHero /> */}
+      <p>Hello my bro!</p>
+    </main>
   );
-};
-
-export default App;
+}

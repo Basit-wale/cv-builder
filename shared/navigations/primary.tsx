@@ -1,23 +1,41 @@
 import { useState } from "react";
-import { PrimaryNavData } from "../../data/primary";
 
-const PrimaryNavigation = () => {
-  const [path, setPath] = useState<string>("forYou");
+export default function PrimaryNavigation() {
+  const [activeTab, setActiveTab] = useState("templates");
+
   return (
-    <div className="w-fit h-[40px] flex gap-0.5 fixed top-0 border-b border-slate-200 justify-center bg-white">
-      {PrimaryNavData.map((navLinks, index) => (
-        <div
-          className={`flex justify-center items-center p-2 px-4 cursor-pointer transition ${
-            path === navLinks.path && "border-b-slate-400 border-b"
+    <div className="flex justify-center fixed z-10">
+      <div className="flex text-[13px] font-medium">
+        <button
+          onClick={() => setActiveTab("templates")}
+          className={`py-1.5 px-2 transition-colors duration-200 ${
+            activeTab === "templates"
+              ? "text-[#232323] font-semibold"
+              : "text-gray-600"
           }`}
-          key={index}
-          onClick={() => setPath(navLinks.path)}
         >
-          <p className="text-sm font-medium">{navLinks.nav}</p>
-        </div>
-      ))}
+          Templates
+        </button>
+
+        <button
+          onClick={() => setActiveTab("forYou")}
+          className={`py-1.5 px-2 transition-colors duration-200 ${
+            activeTab === "forYou"
+              ? "text-[#232323] font-semibold"
+              : "text-gray-600"
+          }`}
+        >
+          For You
+        </button>
+      </div>
+
+      <div
+        className={`absolute bottom-0 h-[2px] bg-[#232323] transition-all duration-300`}
+        style={{
+          width: "19%",
+          left: activeTab === "templates" ? "20%" : "70%",
+        }}
+      />
     </div>
   );
-};
-
-export default PrimaryNavigation;
+}

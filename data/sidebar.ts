@@ -1,26 +1,22 @@
 export const SideBarData = [
   {
-    nav: "Home",
-    path: "home",
+    nav: "Create CV",
+    path: "createCv",
   },
   {
-    nav: "Search",
-    path: "search",
+    nav: "Home",
+    path: "Home",
   },
   {
     nav: "Your CVs",
     path: "your-cvs",
   },
   {
-    nav: "Premium",
-    path: "premium",
+    nav: "Projects",
+    path: "projects",
   },
-  {
-    nav: "Notifications",
-    path: "notifications",
-  },
-  {
-    nav: "Settings",
-    path: "settings",
-  },
+  // {
+  //   nav: "Settings",
+  //   path: "settings",
+  // },
 ];

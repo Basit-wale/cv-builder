@@ -6,13 +6,24 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "framer-motion": "^12.23.12",
     "next": "15.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "next lint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -20,8 +31,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.5",
+    "eslint": "^9.33.0",
+    "eslint-config-next": "^15.4.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -1,11 +1,9 @@
-import Header from "@/shared/header";
-import "./globals.css";
+import "../styles/globals.css";
 import { Inter, Poppins } from "next/font/google";
 
-// Load fonts
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600"], // choose weights you need
+  weight: ["400", "500", "600"],
   variable: "--font-inter",
 });
 
@@ -26,11 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
-        <Header />
-        <div className="mt-4">{children}</div>
-      </body>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
