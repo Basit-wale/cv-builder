@@ -45,7 +45,10 @@ const SearchInput: React.FC<SearchInputProps> = ({
         <div className="w-px h-5 bg-gray-400 mx-2" />
 
         <button
-          onClick={() => setDropdownOpen(!dropdownOpen)}
+          onClick={(e) => {
+            setDropdownOpen(!dropdownOpen);
+            e.stopPropagation();
+          }}
           className="flex items-center text-sm font-semibold text-gray-800"
         >
           {dropdownLabel}
@@ -65,9 +68,10 @@ const SearchInput: React.FC<SearchInputProps> = ({
             {dropdownOptions.map((option) => (
               <button
                 key={option}
-                onClick={() => {
+                onClick={(e) => {
                   onDropdownSelect?.(option);
                   setDropdownOpen(false);
+                  e.stopPropagation();
                 }}
                 className="text-left px-3 py-2 text-[13px] hover:bg-gray-100"
               >

@@ -15,8 +15,15 @@ export const SideBarData = [
     nav: "Projects",
     path: "projects",
   },
-  // {
-  //   nav: "Settings",
-  //   path: "settings",
-  // },
+];
+
+export const SpecialTabs = [
+  {
+    nav: "Profile",
+    path: "profile",
+  },
+  {
+    nav: "Settings",
+    path: "settings",
+  },
 ];
