@@ -37,7 +37,7 @@ const SideBar: React.FC<props> = ({ className }) => {
     <>
       {isMobile ? (
         <div
-          className={`${className} fixed top-0 left-0 heading h-full w-64 bg-[#237183] z-50 text-white transform transition-transform duration-300 ease-in-out p-4 px-6 flex flex-col gap-6 overflow-y-auto`}
+          className={`${className} fixed top-0 left-0 heading h-full w-64 bg-gradient-to-b from-[#0e9fc0] to-[#0d5b6d] z-50 text-white transform transition-transform duration-300 ease-in-out p-4 px-6 flex flex-col gap-6 overflow-y-auto`}
           onClick={(e) => e.stopPropagation()}
         >
           <p className="font-medium">CV Builder</p>
@@ -79,7 +79,7 @@ const SideBar: React.FC<props> = ({ className }) => {
         </div>
       ) : (
         <div
-          className={`${className} fixed top-0 left-0 heading h-full w-[5em] bg-[#1a8ea8] z-50 text-white transform transition-transform duration-300 ease-in-out p-4 px-6 flex flex-col justify-between overflow-ellipsis`}
+          className={`${className} fixed top-0 left-0 heading h-full w-[5em] bg-gradient-to-b from-[#0e9fc0] to-[#0d5b6d] z-50 text-white transform transition-transform duration-300 ease-in-out p-4 px-6 flex flex-col justify-between overflow-ellipsis`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col gap-6">

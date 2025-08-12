@@ -4,9 +4,6 @@ import PrimaryNavigation from "@/shared/navigations/primary";
 import "../styles/header.css";
 
 const Header = () => {
-  //   if (screenLeft === 100) {
-  //     console.log("Please fuck off");
-  //   }
   return (
     <div className="w-full h-[40px] flex justify-between items-center px-4">
       <div className="w-[25vw]">
