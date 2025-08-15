@@ -13,3 +13,27 @@ body {
 .text {
   font-family: "Inter", sans-serif;
 }
+
+.gri {
+  position: relative; /* Masonry needs this */
+  /* margin: 0 auto; Center the grid */
+}
+
+.grid-item {
+  position: absolute;
+}
+
+.test {
+  column-width: 320px;
+}
+
+.test img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  will-change: transform;
+}

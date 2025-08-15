@@ -4,13 +4,10 @@ import PrimaryNavigation from "@/shared/navigations/primary";
 import "../styles/header.css";
 
 const Header = () => {
-  //   if (screenLeft === 100) {
-  //     console.log("Please fuck off");
-  //   }
   return (
     <div className="w-full h-[40px] flex justify-between items-center px-4">
       <div className="w-[25vw]">
-        <p className="font-medium text-lg">CB</p>
+        {/* <p className="font-medium text-lg">CB</p> */}
       </div>
       <div className="w-[40vw] justify-center items-center hidden nav-responsive-design">
         <PrimaryNavigation />
