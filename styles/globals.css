@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 body {
-  background: #efefef;
+  background: #f9fafb;
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: var(--font-inter), sans-serif;
+  @apply font-normal;
 }
 
 .heading {
@@ -15,8 +15,7 @@ body {
 }
 
 .gri {
-  position: relative; /* Masonry needs this */
-  /* margin: 0 auto; Center the grid */
+  position: relative;
 }
 
 .grid-item {
@@ -31,7 +30,8 @@ body {
   width: 100%;
   object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-inline-end: 30px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: transform 0.3s ease;
   cursor: pointer;

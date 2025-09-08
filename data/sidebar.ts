@@ -1,19 +1,19 @@
 export const SideBarData = [
   {
-    nav: "Create CV",
-    path: "createCv",
+    nav: "Create Post",
+    path: "createPost",
   },
   {
     nav: "Home",
     path: "Home",
   },
   {
-    nav: "Your CVs",
-    path: "your-cvs",
+    nav: "Dashboard",
+    path: "dashboard",
   },
   {
-    nav: "Projects",
-    path: "projects",
+    nav: "Chats",
+    path: "chats",
   },
 ];
 

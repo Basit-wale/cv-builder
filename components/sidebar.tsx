@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 import "../styles/sidebar.css";
 import { useRouter } from "next/navigation";
 import { FiPlusSquare } from "react-icons/fi";
-import { SiReaddotcv } from "react-icons/si";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaUserCircle } from "react-icons/fa";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
 
 interface props {
   className: string;
@@ -37,7 +37,7 @@ const SideBar: React.FC<props> = ({ className }) => {
     <>
       {isMobile ? (
         <div
-          className={`${className} fixed top-0 left-0 heading h-full w-64 bg-gradient-to-b from-[#0e9fc0] to-[#0d5b6d] z-50 text-white transform transition-transform duration-300 ease-in-out p-4 px-6 flex flex-col gap-6 overflow-y-auto`}
+          className={`${className} fixed top-0 left-0 heading h-full w-64 bg-gradient-to-b from-[#0284C7] to-[#0d5b6d] z-50 text-white transform transition-transform duration-300 ease-in-out p-4 px-6 flex flex-col gap-6 overflow-y-auto`}
           onClick={(e) => e.stopPropagation()}
         >
           <p className="font-medium">CV Builder</p>
@@ -60,11 +60,13 @@ const SideBar: React.FC<props> = ({ className }) => {
                     }}
                   >
                     <div className="flex gap-2 items-center">
-                      {item.nav === "Create CV" && <FiPlusSquare size={20} />}
+                      {item.nav === "Create Post" && <FiPlusSquare size={20} />}
                       {item.nav === "Home" && <FiHome size={20} />}
-                      {item.nav === "Your CVs" && <SiReaddotcv size={20} />}
+                      {item.nav === "Chats" && (
+                        <IoChatboxEllipsesOutline size={20} />
+                      )}
                       {item.nav === "Settings" && <FiSettings size={20} />}
-                      {item.nav === "Projects" && (
+                      {item.nav === "Dashboard" && (
                         <LuLayoutDashboard size={20} />
                       )}
                       <p className="text-[13px]">{item.nav}</p>
@@ -115,7 +117,7 @@ const SideBar: React.FC<props> = ({ className }) => {
                         )}
                       </AnimatePresence>
 
-                      {item.nav === "Create CV" && (
+                      {item.nav === "Create Post" && (
                         <div className="p-3 hover:bg-[#00000011] rounded-full transition-all duration-200">
                           <FiPlusSquare size={iconSize} />
                         </div>
@@ -125,12 +127,12 @@ const SideBar: React.FC<props> = ({ className }) => {
                           <FiHome size={iconSize} />
                         </div>
                       )}
-                      {item.nav === "Your CVs" && (
+                      {item.nav === "Chats" && (
                         <div className="p-3 hover:bg-[#00000011] rounded-full transition-all duration-200">
-                          <SiReaddotcv size={iconSize} />
+                          <IoChatboxEllipsesOutline size={iconSize} />
                         </div>
                       )}
-                      {item.nav === "Projects" && (
+                      {item.nav === "Dashboard" && (
                         <div className="p-3 hover:bg-[#00000011] rounded-full transition-all duration-200">
                           <LuLayoutDashboard size={iconSize} />
                         </div>

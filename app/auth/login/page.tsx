@@ -1,5 +1,7 @@
+import AuthPage from "./form";
+
 const Login = () => {
-  return <p>Login</p>;
+  return <AuthPage />;
 };
 
 export default Login;

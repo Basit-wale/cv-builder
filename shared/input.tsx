@@ -1,88 +1,50 @@
-import React, { useState } from "react";
-import { FiX, FiChevronDown, FiSearch } from "react-icons/fi";
-import { motion, AnimatePresence } from "framer-motion";
+"use client";
 
-interface SearchInputProps {
-  value: string;
+import { useEffect, useState } from "react";
+import { FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
+interface props {
+  label?: string;
+  value?: string;
+  type: "text" | "number" | "email" | "password" | "checkbox";
   onChange: (value: string) => void;
-  onClear?: () => void;
   placeholder?: string;
-  dropdownLabel?: string;
-  dropdownOptions?: string[];
-  onDropdownSelect?: (option: string) => void;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({
+const Input: React.FC<props> = ({
+  label,
   value,
+  type,
   onChange,
-  onClear,
-  placeholder = "Search...",
-  dropdownLabel = "All Templates",
-  dropdownOptions = [],
-  onDropdownSelect,
+  placeholder,
 }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [iconVisible, setIconVisible] = useState<boolean>(false);
 
   return (
-    <div className="relative w-full">
-      <div className="flex items-center bg-[#d7d7d7] px-4 py-2 rounded-full w-full">
-        <FiSearch className="mr-2 text-gray-500" size={16} />
+    <div className={`flex flex-col gap-2 text-xs`}>
+      {type != "checkbox" && <label>{label}</label>}
 
+      <div
+        className={`border border-slate-300 rounded items-center flex justify-end w-full`}
+      >
+        {/* {type == "email" && <MdEmail className="ml-3" size={17} />}
+        {type == "password" && <FaLock className="ml-3" size={14} />}
+        {type == "text" && <FaUser className="ml-3" size={14} />} */}
         <input
-          type="text"
+          type={type}
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          className={`p-3 px-2.5 pl-4 placeholder:text-[11px] w-full bg-none border-none outline-none`}
           placeholder={placeholder}
-          className="bg-transparent outline-none flex-1 text-sm text-gray-600"
+          onClick={() => setIconVisible(true)}
         />
-
-        {value && onClear && (
-          <button onClick={onClear} className="text-gray-600 px-2">
-            <FiX size={16} />
-          </button>
+        {type == "password" && iconVisible && (
+          <FaEyeSlash className="absolute mr-3 text-right" size={15} />
         )}
-
-        <div className="w-px h-5 bg-gray-400 mx-2" />
-
-        <button
-          onClick={(e) => {
-            setDropdownOpen(!dropdownOpen);
-            e.stopPropagation();
-          }}
-          className="flex items-center text-sm font-semibold text-gray-800"
-        >
-          {dropdownLabel}
-          <FiChevronDown className="ml-1" size={16} />
-        </button>
       </div>
-
-      <AnimatePresence>
-        {dropdownOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -5 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -5 }}
-            transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-1 w-fit bg-white border border-gray-200 shadow-md rounded-md z-50 flex flex-col divide-y divide-gray-200"
-          >
-            {dropdownOptions.map((option) => (
-              <button
-                key={option}
-                onClick={(e) => {
-                  onDropdownSelect?.(option);
-                  setDropdownOpen(false);
-                  e.stopPropagation();
-                }}
-                className="text-left px-3 py-2 text-[13px] hover:bg-gray-100"
-              >
-                {option}
-              </button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
 
-export default SearchInput;
+export default Input;
