@@ -1,4 +1,4 @@
-import SearchInput from "@/shared/input";
+import SearchInput from "@/shared/globalSearch";
 import { useState } from "react";
 
 const Feed = () => {
@@ -15,8 +15,8 @@ const Feed = () => {
         dropdownLabel={selectedFilter}
         dropdownOptions={["All", "Templates"]}
         onDropdownSelect={(option) => setSelectedFilter(option)}
+        DropDown={true}
       />
-      <div className="grid-size" />
       <div className="test">
         <img
           src="https://i.pinimg.com/736x/d6/6d/4d/d66d4dca8181a25478622a41d82df809.jpg"
